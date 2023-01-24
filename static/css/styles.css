@@ -1,0 +1,470 @@
+html, body{
+	background:#dfdede;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+input{
+	padding: 10px;
+	margin: 10px;
+
+}
+
+.form-contact {
+	height: 50em;
+  	display: flex;
+  	flex-direction: row;
+}
+
+.form-contact_v{
+    height: 50em;
+    display: flex;
+    justify-content:flex-end; 
+}
+
+a{
+	color:#000000;
+    text-decoration: none;
+    text-align: center;
+}
+
+.links{
+    font-size: 18px;
+    margin: 10px;
+    padding: 5px;
+}
+.pp_links{
+    width: 170px;
+}
+
+/*Главная страница начало*/
+
+.main{
+    margin: 20px;
+    padding: 30px;
+}
+
+.main_nows_req{
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 1;
+}
+.form_pp_main, .form_main, .from_main_nows{
+    background: #fafafa;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 5px;
+    
+}
+
+.form_pp_main_menu, .from_main_nows{
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.form_main{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.button{
+    width: 20%;
+    height: 50px;
+    background: #446C80;
+    cursor: pointer;
+    border: none;
+    font: 20px Tahoma, Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    
+}
+
+.btn{
+    font: 16px Tahoma, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    background:#477f9b;
+    width: 150px;
+    height: 43px;
+}
+.btn:hover{
+    color:#cacaca;
+}
+
+#btn {
+	width: 150px;
+	background: #df7254;
+    font: 16px Tahoma, Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#btn:hover{
+    color:#cacaca;
+}
+
+
+ul.mainmenu{
+    list-style: none;
+    background: #446C80;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    color:#062514;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+ul.mainmenu li{
+    float: left;
+    margin: 18px 40px 0 50px;
+}
+
+ul.mainmenu li.last {float: right;}
+ul.mainmenu li a{
+    color: burlywood;
+    text-decoration: none;
+}
+ul.mainmenu li a:hover{
+    color: rgb(211, 151, 73);
+}
+
+
+.clear {clear: both;}
+
+.filitr{
+    background: #567585;
+    width:20%;
+    margin: 0;
+    padding: 20px;
+}
+.content_rq {
+    background: #fafafa;
+    margin: 20px;
+    padding: 20px;
+    flex-basis:  80%;
+    border-radius: 5px;
+}
+
+/*.content_v_rq{
+    background: #fafafa;
+    width: 80%;
+    margin: 5px;
+    padding: 20px;
+}*/
+
+ul.list-posts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+}
+ul.list-posts li {
+    margin: 20px 0 0 0;
+    border: 1px solid #9e9e9e;
+}
+ul.list-posts .title {
+    margin: 0;
+    padding: 5px;
+    background: #cacaca;
+}
+ul.list-posts .annonce {
+    margin: 0;
+    padding: 10px 5px 10px 5px;
+}
+ul.list-posts .z_checkbox{
+    width: 10%;
+}
+
+ul.list-posts .z_label{
+    width: 90%;
+}
+
+ul.list-posts .custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+.custom-checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+.custom-checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+.custom-checkbox:checked+label::before {
+    border-color: #0b76ef;
+    background-color: #0b76ef;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  }
+
+
+.form-log{
+    background: #446C80;
+	height: 30%;
+	width: 20%;
+  	padding: 0px;
+  	border-radius: 10px;
+    position: fixed; top: 40%; left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+ 
+.div-acceptance {
+    background: #fafafa;
+    margin: 30px;
+    padding: 20px;
+    min-height: 50%;
+
+    border-radius: 10px;
+  }
+
+.form-DocumentProcessing, .form-DocumentProcessing-action, .form-acceptance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.form_personal_data{
+    display: flex;
+    flex-direction: row;
+    flex-grow:1;
+
+}
+  /* Флекс боксы в описи*/
+
+.doc_item_1{flex-basis:  15%;}
+.doc_item_2{flex-basis:  40%;}
+.doc_btn{
+    margin: auto;
+    height: 43px;
+    border-radius: 5px;
+    padding: 0%;
+}
+
+.icon_download{
+    color:#fff;
+    padding-left: 10px;
+}
+.doc_btn:focus{
+    color: #cacaca;
+}
+
+
+.example-2 .btn-tertiary{
+    background-color: #477f9b;
+    color:#fff;
+    padding:0;
+    line-height:40px;
+    margin: auto;
+    width: 150px;
+    height: 43px;
+    display:block;
+    border-radius: 5px;
+
+}
+    
+.example-2 .btn-tertiary:hover,.example-2 .btn-tertiary:focus{
+    color:#cacaca;
+}
+.example-2 .input-file{width:.1px;height:.1px;opacity:0;overflow:hidden;position:absolute;z-index:-1}
+.example-2 .input-file + .js-labelFile{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 10px;cursor:pointer}
+.example-2 .input-file + .js-labelFile .icon:before{content:"\f093"}
+.example-2 .input-file + .js-labelFile.has-file .icon:before{content:"\f00c";color:#5AAC7B}
+
+/*Поиск*/
+.search {
+	width: 30%;
+
+	/* кнопку отправки будем позиционировать абсолютно,
+	** поэтому необходимо это свойство */
+	position: relative;
+}
+
+.search input {
+	border: none;
+}
+
+.search .input {
+	/* растягиваем поле ввода на всю ширину формы */
+	width: 100%;
+	padding: 8px 37px 9px 15px;
+	/* чтобы ширина поля ввода (100%) включала в себя внутренние отступы */
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/* добавляем внутренние тени */
+	box-shadow: inset 0 0 3px rgb(214, 208, 208), inset 0 1px 2px rgb(214, 208, 208);
+    border-radius: 5px;
+	background: #fff;
+	font: 15px Tahoma, Arial, sans-serif;
+	color: #EEE;;
+	outline: none;
+}
+
+/* меняем оформление поля ввода при фокусе */
+.search .input:focus {
+	box-shadow: inset 0 0 3px #446C80, inset 0 1px 2px #446C80;
+	background: #fff;
+	color: #333;
+}
+
+.search .submit {
+	position: absolute;
+	top: -12px;
+    padding: 10px;
+	right: 0;
+	width: 30px;
+	height: 100%;
+	cursor: pointer;
+	background: url(https://lh4.googleusercontent.com/-b-5aBxcxarY/UAfFW9lVyjI/AAAAAAAABUg/gQtEXuPuIds/s13/go.png) 50% no-repeat;
+	opacity: 0.5;
+}
+.search .submit:hover {
+	opacity: 0.8;
+}
+
+input[type="search"] {
+	-webkit-appearance: none;
+}
+
+
+
+/* Таблицы */
+
+.doc_show{
+    margin: 20px;
+}
+table{
+    font-family: sans-serif;
+    text-align: left;
+    border-collapse: collapse;
+    border: 2px solid #dfdede;
+    width: 100%;    
+}
+
+.text{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+}
+th{
+    font-size: 18px;
+    padding: 10px;
+}
+
+td{
+    padding: 10px;
+}
+.tr_name{
+    background-color: #dfdede;
+}
+
+/*мгновеные сообщения*/
+.flash {
+    padding: 10px;
+    font-size: 18px;
+}
+.flash.success {
+    border: 1px solid #21DB56;
+    background: #AEFFC5;
+}
+.flash.error {
+    border: 1px solid #FF4343;
+    background: #FF9C9C;
+}
+
+.dovn{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    align-items: flex-end;
+}
+
+
+/*отображение запросов */
+
+/*вся форма*/
+.ShowRequest {
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    align-items: stretch;
+    justify-content: space-between;
+}
+/*форма запроса*/
+.form-info-employee{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px;
+    max-width: 80%;
+}
+.form-employee, .form-orders, .form-personal_accounts, .form-image-employee{
+    background: #fafafa;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+.form-employee{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.form-acceptance {justify-content: space-between}
+
+.form_profile_serch{
+    display: flex;
+}
+.form_profile_serch input{
+    width: 90%;
+}
+
+.block_profile{
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 2px solid #dfdede;
+    border-radius: 5px;
+    width: 100%;
+}
+.block_profile_FIOY{
+    display: flex;
+    justify-content:flex-start;
+}
+.title{
+    font-size: 20px;
+}

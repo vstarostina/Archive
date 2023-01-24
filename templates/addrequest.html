@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<div class = "div-acceptance">
+    <div>
+        <form action="" class = "form-DocumentProcessing">
+            <a href="{{url_for('activ_requests')}}" class = "links">Список запросы</a>
+            <a href="{{url_for('addrequest')}}" class = "links">Добавить запрос</a>
+        </form>
+        <hr>
+    </div>
+
+<p><h1>Новый запрос</h1>
+    <p><label>Подразделение </label> 
+        <select name="pp">
+            <option>Поликлиническое подразделение 1</option>
+            <option>Поликлиническое подразделение 2</option>
+            <option>Поликлиническое подразделение 3</option>
+            <option>Поликлиническое подразделение 4</option>
+            <option>Поликлиническое подразделение 5</option>
+            <option>Поликлиническое подразделение 6</option>
+            <option>Диагностический центр</option>
+            <option>ПМР</option>
+        </select>
+<p style="margin: 40px;"><h3>Персональные данные</h3>
+    <form action="">   
+<div>
+    <div action="" class = "form_personal_data">
+    <div><input type="text" name="last_name" value="" requied placeholder="Фамилия сотрудника"/></div>
+    <div><input type="text" name="first_name" value="" requied placeholder="Имя сотрудника"/></div>
+    <div><input type="text" name="o_name" value="" requied placeholder="Отчество сотрудника"/></div>
+    <div> <label>Дата рождения:</label><input type="date" name="date_b"/></div>
+    </div>
+<p style="margin: 40px;"><h3>Дополнительная информация</h3>
+    <div action="" class = "form_personal_data">
+    <div><input type="text" name="d_name" value="" requied placeholder="Должность сотрудника"/> </div>
+    <div><label>Дата приема:</label> <input type="date" name="date_n"></div>
+    <div><label>Дата увольнения:</label> <input type="date" name="date_k"></div>
+    </div>
+    <p><input type="submit" id="btn" value="Добавить" />
+    </form> 
+</div>
+{% endblock %}

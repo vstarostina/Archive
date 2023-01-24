@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+
+<div class="div-acceptance">
+    <div class = "form_pp_main_menu">
+        <a href="{{url_for('orders')}}" class = 'links'>Добавление приказов</a>
+        <a href="{{url_for('personal_accounts')}}" class = 'links'>Добавление лицевых счетов</a>
+        <a href="{{url_for('listemployee')}}" class = 'links'>Список сотрудников</a>
+    </div>
+    <hr>
+    <h1>Приказы</h1>
+    <div class = "form-acceptance" >
+        <div class=" doc_item_2"></div>
+        <div class=" doc_item_2"></div>
+        <div >
+            <a href="download_orders_file" target="_blank" download="">         
+                <button name="btn" class="btn" value="Скачать шаблон" style="background:#477f9b; width: 170px; margin-top: 10px;">
+                    <i class="icon fa fa-download"></i>
+                    Скачать шаблон
+                </button> 
+            </a>
+        </div>
+        
+        <form method=post enctype=multipart/form-data class = "dovn example-2">
+
+            <div style="margin: 5px;">
+                <input type="file" name="file" id="file" class="input-file" accept=".xls, .xlsx">
+                <label for="file" class=" btn-tertiary js-labelFile">
+                    <i class="icon fa fa-check"></i>
+                    <span class="js-fileName">Выбрать файл</span>
+                </label>
+            </div>
+            <div>
+                <input type="submit" value="Загрузить данные из файла" class="btn" style="width: 220px;"/>
+            </div>
+        </form>      
+</div>
+
+
+<div class = "doc_show">
+    <table>
+        <tr class="tr_name">
+            <th>ФИО сотрудника</th>
+            <th>Номер документа</th>
+            <th>Вид приказа</th>
+            <th>Дата</th>
+            <th>Номер</th>
+            <th>Страница</th>
+        </tr>
+        {% for p in orders %}
+        <tr class="tr_doc">
+            {% for e in employee %}
+                {% if  e[0] == p.employee_id %}
+                    <td>{{e[1]}} {{e[2]}} {{e[3]}}</td>
+                {% endif %}
+            {% endfor %}
+            <td>{{p.documents_id}}</td>
+            <td>{{p.type_orders}}</td>
+            <td>{{p.data}}</td>
+            <td>{{p.nomber}}</td>
+            <td>{{p.page}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>  
+  
+
+
+</div>
+
+
+
+{% endblock %}

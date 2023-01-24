@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<form action="{{url_for('login')}}" method="post" class = "form-log">
+	
+<div>
+	<p><h1>Вход</h1></p>
+</div>
+<div>
+	<p><input type="text" name="login"  placeholder="Имя пользователя"/>
+	<p><input type="password" name="password" placeholder="Пароль">
+	<p><input type="submit" name="btn" id="btn" cellspasing="0" style="width: 90%;" value="Войти">
+	<!--<p><a href='{{url_for ("registration")}}' target="_blanc" color="#499068">Зарегестрироваться</a></p>-->
+</div>
+</form>
+
+{% endblock %}

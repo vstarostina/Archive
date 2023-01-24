@@ -1,0 +1,63 @@
+body{
+	background: #446C80;
+}
+input{
+	 padding: 10px;
+	 margin: 5px;
+	 width:85%;
+
+}
+form{
+	height: 50em;
+  	display: flex;
+  	align-items:center;
+  	justify-content: center
+}
+a{
+	color:#499068;
+}
+a:active {
+    color: #405E4D 
+ }
+a:visited {
+	color: #0B4A26;
+}
+.help{
+	background:#cacaca;
+	height: 50%;
+	width: 30%;
+	display: flex;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 0px;
+  	border-radius: 10px;
+
+
+}
+.entrance, .entrance2{
+	background:#499068;
+	height: 100%;
+	margin:0;
+	padding: 0;
+	border-radius: 10px 0 0 10px;
+}
+.entrance{
+	width:20%;
+}
+.dasha{
+	width:70%;
+	text-align: right;
+}
+.dasha2{
+	width:65%;
+	text-align: right;
+}
+
+#btn{
+	width: 150px;
+	background: #CA7C67;
+}
+
+.entrance2{
+	width:25%;
+}

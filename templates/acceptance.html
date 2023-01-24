@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+{% for msg in get_flashed_messages() %}
+<div class="flash">{{msg}}</div>
+{% endfor %}
+<div class = "div-acceptance">
+    <div>
+        <form action="" class = "form-DocumentProcessing">
+            <div class = "links">
+                <a href="{{url_for('acceptance')}}">Прием документов</a>
+            </div>
+            <div class = "links">
+                <a href="{{url_for('delete')}}" >Утилизация документов</a>
+                
+            </div>
+        </form>
+    </div>
+<hr>
+    <p><h1>Опись документов</h1>
+<div  class = "form-acceptance" >
+    <div class=" doc_item_2"></div>
+    <div class=" doc_item_2"></div>
+    <div >
+        <a href="download_file" target="_blank" download="">         
+            <button name="btn" class="btn" value="Скачать шаблон" style="background:#477f9b; width: 170px; margin-top: 10px;">
+                <i class="icon fa fa-download"></i>
+                Скачать шаблон
+            </button> 
+        </a>
+    </div>
+    <div class="example-2 doc_item_1">
+        <form method=post enctype=multipart/form-data class = "dovn">
+            <div style="margin: 5px;">
+                <input type="file" name="file" id="file" class="input-file" accept=".xls, .xlsx">
+                <label for="file" class=" btn-tertiary js-labelFile">
+                    <i class="icon fa fa-check"></i>
+                    <span class="js-fileName">Выбрать файл</span>
+                </label>
+            </div>
+            <div>
+                <input type="submit" value="Загрузить данные из файла" class="btn" style="width: 220px;"/>
+            </div>
+        
+        </form>
+    </div>
+</div>
+    <div class = "doc_show">
+        <table>
+            <tr class="tr_name">
+                <th>Наименование документа</th>
+                <th>Вид документа</th>
+                <th>Подразделение</th>
+                <th>Год</th>
+                <th>Срок хранения</th>
+                <th>Количество</th>
+                <th>Время добавления</th>
+            </tr>
+            {% for p in doc %}
+            <tr class="tr_doc">
+                <td>{{p.name_doc}}</td>
+                <td>{{p.type_doc}}</td>
+                <td>{{p.pp}}</td>
+                <td>{{p.years}}</td>
+                <td>{{p.shelf_life}}</td>
+                <td>{{p.counts}}</td>
+                <td>{{p.data_add}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+</div>
+
+{% endblock %}

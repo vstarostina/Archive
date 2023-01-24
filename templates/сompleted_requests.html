@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<div class = "div-acceptance">
+    <div>
+        <form action="" class = "form-DocumentProcessing">
+            <a href="{{url_for('activ_requests')}}" class = "links">Активные запросы</a>
+            <a href="{{url_for('сompleted_requests')}}" class = "links">Выполненные запросы</a>
+            <a href="{{url_for('addrequest')}}" class = "links">Добавить запрос</a>
+        </form>
+    <hr>
+</div>
+
+<p><h1>Выполненные запросы</h1>
+<div class = "content_rq">
+
+        <div class="search">
+            <input type="search" name="" placeholder="Поиск запросов" class="input" />
+            <input type="submit" name="" value="" class="submit" />
+        </div>
+    </div>
+
+{% endblock %}    

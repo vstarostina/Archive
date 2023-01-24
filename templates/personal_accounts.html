@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+{% for msg in get_flashed_messages() %}
+<div class="flash">{{msg}}</div>
+{% endfor %}
+
+<div class="div-acceptance">
+
+    <div class = "form_pp_main_menu">
+        <a href="{{url_for('orders')}}" class = 'links'>Добавление приказов</a>
+        <a href="{{url_for('personal_accounts')}}" class = 'links'>Добавление лицевых счетов</a>
+        <a href="{{url_for('listemployee')}}" class = 'links'>Список сотрудников</a>
+    </div>
+    <hr>
+    <div class = "form-acceptance" >
+        <div><h1>Лицевые счета</h1></div>
+        <div>
+            <a href="download_personal_accounts_file" target="_blank" download="">         
+                <button name="btn" class="btn" value="Скачать шаблон" style="background:#477f9b; width: 170px; margin-top: 10px;">
+                    <i class="icon fa fa-download"></i>
+                    Скачать шаблон
+                </button> 
+            </a>
+        </div>
+        <form method=post enctype=multipart/form-data class = "dovn example-2">
+
+            <div style="margin: 5px;">
+                <input type="file" name="file" id="file" class="input-file" accept=".xls, .xlsx">
+                <label for="file" class=" btn-tertiary js-labelFile">
+                    <i class="icon fa fa-check"></i>
+                    <span class="js-fileName">Выбрать файл</span>
+                </label>
+            </div>
+            <div>
+                <input type="submit" value="Загрузить данные из файла" class="btn" style="width: 220px;"/>
+            </div>
+        </form>      
+</div>
+
+<div class = "doc_show">
+
+{% for e in employee %}
+    {% for p in profile %}
+        {% if e.id == p.employee_id %}
+<div class = "block_profile"> 
+    <div class = "block_profile_FIOY">
+        <div><h3>{{e.last_name}} {{e.first_name}} {{e.o_patronymic}} </h3></div>
+        <div style="margin-left: 20px;"><h3>Год: {{p.years}}</h3></div>
+    </div>
+    <table>
+        <tr class="tr_name">
+            <th>Месяц</th>
+            {% for c in calc_month %}
+            {% if p.id == c.personal_accounts_id %}
+            <td>{{c.month_calc}}</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        <tr class="tr_doc">
+            <th>Сумма начисления</th>
+            {% for c in calc_month %}
+            {% if p.id == c.personal_accounts_id %}
+            <td>{{c.summ }}</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+    </table>
+    <div style="height: 10px;"></div>
+    
+</div>
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endblock %}

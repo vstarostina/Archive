@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+
+    <div class = "form-info-employee">
+        <div class = "form-employee">
+            <div>
+                <h1> Обработка запроса</h1>
+                <p style="font-size: 20px; margin-left: 30px;">Сотрудник: {{last_name}} {{first_name}} {{o_patronymic}}</p>
+                <p style="font-size: 20px; margin-left: 30px;">Должность: {{d_position}}</p>
+                <p style="font-size: 16px; margin-left: 30px;">Запрос поступил: {{data_tek}}</p>
+            </div>
+        </div>
+        <div class="form-orders">
+            <h1>Приказы</h1>
+            <table>
+                <tr class="tr_name">
+                    <th>Вид приказа</th>
+                    <th>Дата приказа</th>
+                    <th>Номер приказа</th>
+                </tr>
+                {% for p in order %}
+                <tr class="tr_doc">
+                    <td>{{p.type_orders}}</td>
+                    <td>{{p.data}}</td>
+                    <td>{{p.nomber}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class = "form-personal_accounts">
+            <h1>Лицевые счета</h1>
+            <table>
+                <tr class="tr_name">
+                    <th>Год</th>
+                    <th>Месяц</th>
+                    <th>Сумма начисления</th>
+                </tr>
+                {% for p in calc_month %}
+                    <tr class="tr_doc">
+                        {% for row in profile %}
+                        {% if  row[0] == p.personal_accounts_id%}
+                        <td>{{row[1]}}</td>
+                        {% endif %}
+                        {% endfor %}
+                        <td>{{p.month_calc}}</td>
+                        <td>{{p.summ}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

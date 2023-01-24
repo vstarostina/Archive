@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<div class = "div-acceptance">
+    <div>
+        <form action="" class = "form-DocumentProcessing">
+            <div class = "links"><a href="{{url_for('acceptance')}}">Прием документов</a></div>
+            <div class = "links"><a href="{{url_for('delete')}}" >Утилизация документов</a></div>
+        </form>
+        <hr>
+    </div>
+    {% if doc_del %}
+    <div>
+        <h3>В архиве имеются документы с истекшим сроком хранения</h3>
+      
+        <div>
+        <a href="download_act_delete" target="_blank" download="">         
+            <button name="btn" class="btn" value="Составить Акт" style="background:#477f9b; width: 170px; margin-top: 10px;">
+                <i class="icon fa fa-download"></i>
+                Составить акт
+            </button> 
+        </a>
+        </div>
+        
+        <div class = "doc_show">
+            <table>
+                <tr class="tr_name">
+                    <th>Наименование документа</th>
+                    <th>Вид документа</th>
+                    <th>Подразделение</th>
+                    <th>Год</th>
+                    <th>Срок хранения</th>
+                    <th>Количество</th>
+                </tr>
+                {% for p in doc_del %} 
+                <tr class="tr_doc">
+                    <td>{{p.name_doc}}</td>
+                    <td>{{p. type_doc}}</td>
+                    <td>{{p.pp}}</td>
+                    <td>{{p.years}}</td>
+                    <td>{{p.shelf_life}}</td>
+                    <td>{{p.counts}}</td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
+    </div>
+    {% endif %}
+    <p><h1>Утилизированные документы</h1>
+
+    <div class = "doc_show">
+        <table>
+            <tr class="tr_name">
+                <th>Наименование документа</th>
+                <th>Подразделение</th>
+                <th>Год</th>
+                <th>Дата утилизации</th>
+                <th>Срок хранения</th>
+                <th>Количество</th>
+            </tr>
+            {% for p in doc %}
+            <tr class="tr_doc">
+                <td>{{p.name_doc}}</td>
+                <td>{{p.pp}}</td>
+                <td>{{p.years}}</td>
+                <td>{{p.data_del}}</td>
+                <td>{{p.shelf_life}}</td>
+                <td>{{p.counts}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+</div>
+
+{% endblock %}
